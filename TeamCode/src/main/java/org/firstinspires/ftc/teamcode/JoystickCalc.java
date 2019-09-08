@@ -1,6 +1,9 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.HardwareMap;
+
+import org.firstinspires.ftc.teamcode.RobotComponents.RobotWheels;
 
 public class JoystickCalc {
     private OpMode opmode;
@@ -14,8 +17,12 @@ public class JoystickCalc {
     boolean aButton;
     boolean bButton;
 
+
+
+
     public JoystickCalc(OpMode opmode){
         this.opmode = opmode;
+
     }
     public void calculate(){
          leftStickY = opmode.gamepad1.left_stick_y;

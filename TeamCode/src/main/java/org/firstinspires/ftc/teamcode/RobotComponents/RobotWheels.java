@@ -39,6 +39,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.JoystickCalc;
+import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.RobotHardware;
 
 
@@ -71,23 +72,34 @@ public class RobotWheels {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor leftDrive = null;
-    private DcMotor rightDrive = null;
+    private DcMotor leftDriveBack = null;
+    private DcMotor rightDriveBack = null;
+    private DcMotor rightDriveFront = null;
+    private DcMotor leftDriveFront = null;
 
-    public void doStuff(HardwareMap hardwareMap, OpMode opmode) {
+
+    @Override
+    public void init(HardwareMap hardwareMap) {
+        leftDriveBack = hardwareMap.dcMotor.get(BACKLEFT_WHEEL_NAME);
+        rightDriveBack = hardwareMap.dcMotor.get(BACKRIGHT_WHEEL_NAME);
+        leftDriveBack = hardwareMap.dcMotor.get(FRONTLEFT_WHEEL_NAME);
+        rightDriveBack = hardwareMap.dcMotor.get(FRONTRIGHT_WHEEL_NAME);
+    }
+
+    public void wheelsTeleOp(HardwareMap hardwareMap, OpMode opmode) {
         this.opmode = opmode;
 
         hardwareMap = hwMap;
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        leftDrive = hardwareMap.dcMotor.get("left_drive");
-        rightDrive = hardwareMap.dcMotor.get("right_drive");
 
         // Most robots need the motor on one side to be reversed to drive forward
         // Reverse the motor that runs backwards when connected directly to the battery
-        leftDrive.setDirection(DcMotor.Direction.FORWARD);
-        rightDrive.setDirection(DcMotor.Direction.REVERSE);
+        leftDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        leftDriveBack.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveBack.setDirection(DcMotor.Direction.REVERSE);
 
         // Wait for the game to start (driver presses PLAY)
         //waitForStart();
@@ -116,16 +128,18 @@ public class RobotWheels {
             // rightPower = -gamepad1.right_stick_y ;
 
             // Send calculated power to wheels
-            leftDrive.setPower(leftPower);
-            rightDrive.setPower(rightPower);
+            leftDriveBack.setPower(leftPower);
+            rightDriveBack.setPower(rightPower);
+        leftDriveFront.setPower(leftPower);
+        rightDriveFront.setPower(rightPower);
 
             // Show the elapsed game time and wheel power.
 
         //}
     }
-    public RobotWheels(HardwareMap hardwareMap){
-    leftDrive = hardwareMap.dcMotor.get(BACKLEFT_WHEEL_NAME);
-    rightDrive = hardwareMap.dcMotor.get(BACKRIGHT_WHEEL_NAME);
 
-    }
-}
+
+ }
+
+
+
