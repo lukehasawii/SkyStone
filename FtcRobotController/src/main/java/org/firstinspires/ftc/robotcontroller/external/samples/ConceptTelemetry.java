@@ -56,6 +56,7 @@ public class ConceptTelemetry extends LinearOpMode  {
     /** keeps track of how long it's been since we last emitted a line of poetry */
     ElapsedTime poemElapsed = new ElapsedTime();
 
+
     static final String[] poem = new String[] {
 
         "Mary had a little lamb,",

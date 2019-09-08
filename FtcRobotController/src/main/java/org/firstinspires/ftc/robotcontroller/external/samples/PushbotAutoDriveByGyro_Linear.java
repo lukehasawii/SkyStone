@@ -122,7 +122,6 @@ public class PushbotAutoDriveByGyro_Linear extends LinearOpMode {
 
         telemetry.addData(">", "Robot Ready.");    //
         telemetry.update();
-
         robot.leftDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         robot.rightDrive.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
