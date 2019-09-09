@@ -3,6 +3,8 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.teamcode.RobotComponents.BaseLinearOpMode;
+
 @TeleOp(name="TestOpMode", group="Linear Opmode")
 
 public class SomeOpMode extends BaseLinearOpMode {

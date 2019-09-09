@@ -1,9 +1,10 @@
-package org.firstinspires.ftc.teamcode;
+package GarbageCode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
+import org.firstinspires.ftc.teamcode.Robot;
 import org.firstinspires.ftc.teamcode.RobotComponents.RobotWheels;
 
 public class JoystickCalc {
