@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 import org.firstinspires.ftc.teamcode.RobotComponents.RobotWheels;
 
@@ -22,6 +23,28 @@ public class JoystickCalc {
 
     public JoystickCalc(OpMode opmode){
         this.opmode = opmode;
+
+
+
+
+
+
+        HardwareMap hwMap =  null;
+        Robot robot = new Robot();
+        robot.init(hwMap, true);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
     public void calculate(){

@@ -40,6 +40,7 @@ import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.JoystickCalc;
 import org.firstinspires.ftc.teamcode.Robot;
+import org.firstinspires.ftc.teamcode.RobotComponent;
 import org.firstinspires.ftc.teamcode.RobotHardware;
 
 
@@ -58,7 +59,7 @@ import org.firstinspires.ftc.teamcode.RobotHardware;
  * Remove or comment out the @Disabled line to add this opmode to the Driver Station OpMode list
  */
 
-public class RobotWheels {
+public class RobotWheels implements RobotComponent {
     HardwareMap hwMap =  null;
     public OpMode opmode;
 
@@ -86,8 +87,10 @@ public class RobotWheels {
         rightDriveBack = hardwareMap.dcMotor.get(FRONTRIGHT_WHEEL_NAME);
     }
 
-    public void wheelsTeleOp(HardwareMap hardwareMap, OpMode opmode) {
-        this.opmode = opmode;
+    public void wheelsTeleOp() {
+        HardwareMap hardwareMap;
+        OpMode opmode = this.opmode;
+
 
         hardwareMap = hwMap;
         // Initialize the hardware variables. Note that the strings used here as parameters

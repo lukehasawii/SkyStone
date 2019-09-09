@@ -9,4 +9,11 @@ public class Robot {
     public void init(HardwareMap hardwareMap, boolean resetEncoders){
         robotWheels.init(hardwareMap);
     }
-}
+
+    public void teleOpActivated(){
+    RobotWheels actTele = new RobotWheels();
+    actTele.wheelsTeleOp();
+
+    }
+    }
+
